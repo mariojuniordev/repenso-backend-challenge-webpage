@@ -1,5 +1,5 @@
 import Head from "../../node_modules/next/head";
-import FormPage from "../screens/FormPage";
+import SharePage from "../screens/SharePage";
 
 const Home: React.FC = () =>  {
   return (
@@ -8,7 +8,7 @@ const Home: React.FC = () =>  {
         <title>HomePage</title>
       </Head>
 
-      <FormPage/>
+      <SharePage/>
    </div>
   )
 }
