@@ -8,7 +8,7 @@ Este repositório é destinado a um desafio de código proposto pela empresa Rep
 
 <img src="public/images/home.png"/>
 <img src="public/images/sharepage.png"/>
-<img src="public/images/top10.png"/>
+<img src="public/images/top10p.png"/>
 
 <h2>Solução Adotada para o Projeto</h2>
 
