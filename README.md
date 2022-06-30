@@ -33,8 +33,6 @@ yarn dev
 - Ao clicar no botão que encerra a competição é feita uma requisição GET, que irá fazer a ordenação dos usuários e mostrar os 10 que mais pontuaram;
 - Na página do top 10, o botão abaixo da tabela faz uma requisição get para a API e limpa todos os usuários cadastrados na competição, iniciando uma nova competição;
 
-<h2>IMPORTANTE LEMBRAR DE EXECUTAR O BACKEND DISPONIBILIZADO NO LINK ACIMA PARA CORRETO FUNCIONAMENTO DA APLICAÇÃO!</h2>
-
 <h3>Requisitos Propostos pela Empresa</h3>
 
 - Formulário de inscrição na competição;
