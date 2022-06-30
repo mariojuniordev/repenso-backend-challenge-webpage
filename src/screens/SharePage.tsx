@@ -1,5 +1,8 @@
 import styled from "styled-components"
+import { useRouter } from "../../node_modules/next/router"
+import StandardButton from "../components/StandardButton/index"
 import { Button } from "../components/UI/Button/index"
+import { Flex } from "../components/UI/Flex/index"
 import { Heading } from "../components/UI/Heading/index"
 import { Text } from "../components/UI/Text/index"
 
@@ -23,18 +26,18 @@ export const Container = styled.div`
 
 export default function SharePage() {
 
+  const router = useRouter();
+
+  console.log(router.query)
+
   const shareData = async () => {
     if(navigator.share) {
-      try {
         await navigator.share({
             title: 'Carbon Compensations Competition!',
             text: 'Hi there! Give Your Contribution To Spread The News About Carbon Compensations!',
-            url: 'http://localhost:3000'
+            url: `http://localhost:3000/?email=${router.query.email}`
           }
         )
-      } catch (error) {
-        console.log(`Ops! Something Went Wrong! ${error}`)
-      }
     } else {
       alert('Web Share is not supported by this browser!')
     }
@@ -52,9 +55,17 @@ export default function SharePage() {
         Share it With Your Friends to Earn More Points!
       </Heading>
 
-      <Button mt="32px" maxWidth="350px" onClick={shareData} width="100%" height="50px" borderRadius="50px">
-        <Text textAlign="center" fontWeight="bold" fontSize="18px" color="var(--white)">SHARE</Text>
-      </Button>
+      <Flex mt="32px" gap="16px" alignItems="center" flexDirection="column" width="100%">
+        <StandardButton
+          onClick={shareData}
+          label="SHARE"
+        />
+
+        <StandardButton
+          onClick={() => router.push('/top10')}
+          label="SEE TOP 10 TABLE"
+        />
+      </Flex>
 
     </Container>
   )

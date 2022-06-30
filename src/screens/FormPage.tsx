@@ -9,6 +9,7 @@ import { api } from "../services/api"
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 16px;
@@ -61,19 +62,31 @@ export default function FormPage() {
       phone
     }
 
+    const referredEmail = router.query
+
+    console.log(referredEmail)
+
     await api.post('/signup', data)
     .then(response => statusCode = response.status)
 
     if (statusCode === 201) {
       alert('Successfully registered!')
-      router.push('/sharepage')
+      router.push(`/sharepage/?email=${data.email}`)
     } else {
       alert('Person already registered!')
+    }
+
+    if (referredEmail) {
+      await api.post('/referred', referredEmail)
+      .then(response => console.log(response.data))
     }
   }
 
   return (
     <Container>
+      <Text maxWidth="500px" mb="32px" fontWeight="bold" textAlign="center" color="var(--white)" fontSize="32px">
+        Sign Up To Participate on a Carbon Compensation Competition
+      </Text>
       <CardContainer>
         <Text textAlign="center" variant="h2">CARBON COMPENSATIONS FORM</Text>
 
@@ -107,7 +120,7 @@ export default function FormPage() {
         </Flex>
 
         <Button onClick={onSubmit} width="100%" height="50px" borderRadius="50px">
-          <Text fontWeight="bold" fontSize="18px" color="var(--white)" >Send Info</Text>
+          <Text fontWeight="bold" fontSize="18px" color="var(--white)" >Sign Up</Text>
         </Button>
 
       </CardContainer>
