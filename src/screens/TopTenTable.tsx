@@ -15,9 +15,10 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   padding: 32px;
+  background-image: linear-gradient(to right,  var(--blue), var(--pink));
 
   button {
-    background-image: linear-gradient(to right, var(--blue), var(--pink));
+    background-image: linear-gradient(to right,  var(--pink), var(--blue));
     margin-top: 32px;
 
     :hover {
@@ -36,7 +37,14 @@ export default function TopTenTable() {
   useEffect(() => {
     api.get('/top10')
     .then(response => setTopTenData(response.data))
-  })
+  }, [])
+
+  async function onSubmit() {
+    await api.get('/new-competition')
+    .then(response => console.log(response.data))
+
+    router.push('/')
+  }
 
   if (!topTenData) {
     <Flex height="100vh" alignItems="center" justifyContent="center">
@@ -46,7 +54,7 @@ export default function TopTenTable() {
 
   return (
     <Container>
-      <Text color="var(--white)" fontWeight="bold" fontSize="50px" mb="32px">
+      <Text textAlign="center" color="var(--white)" fontWeight="bold" fontSize="50px" mb="32px">
         CONGRATULATIONS TO THE WINNERS!
       </Text>
 
@@ -56,8 +64,8 @@ export default function TopTenTable() {
       />
 
       <StandardButton
-        label="START NEW COMPETITION"
-        onClick={() => router.push('/')}
+        label="Start New Competition"
+        onClick={onSubmit}
       />
     </Container>
   )

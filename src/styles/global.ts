@@ -18,6 +18,7 @@ export default createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     background-image: linear-gradient(to top right, var(--blue), var(--pink));
+    background-size: cover;
     height: 100vh;
   }
 

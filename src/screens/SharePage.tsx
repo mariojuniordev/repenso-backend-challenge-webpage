@@ -51,9 +51,9 @@ export default function SharePage() {
       <Heading variant="h1" color="var(--white)">POINT</Heading>
       <Heading textAlign="center" variant="h2" color="var(--white)">For Your Contribution!</Heading>
 
-      <Heading textAlign="center" variant="h2" color="var(--white)">
+      <Text mt="24px" maxWidth="400px" fontWeight="bold" textAlign="center" variant="h2" color="var(--white)">
         Share it With Your Friends to Earn More Points!
-      </Heading>
+      </Text>
 
       <Flex mt="32px" gap="16px" alignItems="center" flexDirection="column" width="100%">
         <StandardButton
@@ -63,7 +63,7 @@ export default function SharePage() {
 
         <StandardButton
           onClick={() => router.push('/top10')}
-          label="SEE TOP 10 TABLE"
+          label="End Competition and See Winners"
         />
       </Flex>
 

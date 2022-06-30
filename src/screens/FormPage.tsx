@@ -56,6 +56,11 @@ export default function FormPage() {
   async function onSubmit() {
     let statusCode: number;
 
+    if (!name || !email || !phone) {
+      alert('Fill all Form Fields to Proceed!')
+      return;
+    }
+
     const data = {
       name,
       email,
@@ -85,7 +90,7 @@ export default function FormPage() {
   return (
     <Container>
       <Text maxWidth="500px" mb="32px" fontWeight="bold" textAlign="center" color="var(--white)" fontSize="32px">
-        Sign Up To Participate on a Carbon Compensation Competition
+        Sign Up To Participate on a Carbon Compensation Competition!
       </Text>
       <CardContainer>
         <Text textAlign="center" variant="h2">CARBON COMPENSATIONS FORM</Text>

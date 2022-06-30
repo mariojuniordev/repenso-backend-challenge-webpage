@@ -12,6 +12,7 @@ export interface TextProps {
   lineHeight?: string | number;
   variant?: Variant;
   fontSize?: string;
+  textTransform?: string;
 }
 
 /**
@@ -48,12 +49,13 @@ function switchVariant(variant: Variant) {
  */
 
 export const Text = styled.p<TextProps & PaddingProps & MarginProps & DimensionsProps & BorderProps>`
-  ${({ color = 'black', fontWeight = 400, textAlign, lineHeight, variant = 'h3', fontSize }) => css`
+  ${({ textTransform, color = 'black', fontWeight = 400, textAlign, lineHeight, variant = 'h3', fontSize }) => css`
     color: ${color};
     font-size: ${fontSize ?? switchVariant(variant)};
     font-weight: ${fontWeight};
     text-align: ${textAlign};
     line-height: ${lineHeight};
+    text-transform: ${textTransform};
     ${(props) => processPadding(props as PaddingProps)}
     ${(props) => processMargin(props as MarginProps)}
     ${(props) => processDimensions(props as DimensionsProps)}
