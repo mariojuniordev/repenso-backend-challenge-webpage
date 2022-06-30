@@ -33,10 +33,10 @@ export default function SharePage() {
           }
         )
       } catch (error) {
-        console.log(`Ops! Algo deu errado! ${error}`)
+        console.log(`Ops! Something Went Wrong! ${error}`)
       }
     } else {
-      alert('Web Share não é suportado neste browser!')
+      alert('Web Share is not supported by this browser!')
     }
   }
 
