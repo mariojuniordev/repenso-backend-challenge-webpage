@@ -42,6 +42,8 @@ const CardContainer = styled.div`
 
         @media(max-width: 600px) {
           font-size: 8px;
+          max-width: 150px;
+          overflow: hidden;
         }
       }
 
