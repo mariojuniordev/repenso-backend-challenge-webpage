@@ -39,6 +39,10 @@ const CardContainer = styled.div`
         border: 1px solid var(--pink);
         padding-top: 16px;
         padding-bottom: 16px;
+
+        @media(max-width: 600px) {
+          font-size: 8px;
+        }
       }
 
       .points {

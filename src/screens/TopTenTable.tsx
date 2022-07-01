@@ -36,7 +36,7 @@ const Title =  styled.p`
   margin-bottom: 32px;
 
   @media(max-width: 600px) {
-    display: none;
+    font-size: 32px;
   }
 `
 export default function TopTenTable() {
