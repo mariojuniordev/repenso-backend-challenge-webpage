@@ -35,7 +35,7 @@ export default function SharePage() {
         await navigator.share({
             title: 'Carbon Compensations Competition!',
             text: 'Hi there! Give Your Contribution To Spread The News About Carbon Compensations!',
-            url: `http://localhost:3000/?email=${router.query.email}`
+            url: `https://repenso-backend-challenge-webpage.vercel.app/?email=${router.query.email}`
           }
         )
     } else {
