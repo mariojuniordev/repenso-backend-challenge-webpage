@@ -52,7 +52,7 @@ const CardContainer = styled.div`
 export default function Table(props: TableProps) {
   return (
     <CardContainer>
-      <Heading color="var(--pink)">TOP 10 CONTRIBUTORS</Heading>
+      <Heading textAlign="center" color="var(--pink)">TOP 10 CONTRIBUTORS</Heading>
       <table>
         <thead>
           <tr>

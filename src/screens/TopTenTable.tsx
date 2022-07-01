@@ -27,6 +27,18 @@ const Container = styled.div`
     }
   }
 `
+
+const Title =  styled.p`
+  text-align: center;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 32px;
+
+  @media(max-width: 600px) {
+    display: none;
+  }
+`
 export default function TopTenTable() {
   const [topTenData, setTopTenData] = useState<TopTenData | null>(null);
 
@@ -54,9 +66,9 @@ export default function TopTenTable() {
 
   return (
     <Container>
-      <Text textAlign="center" color="var(--white)" fontWeight="bold" fontSize="50px" mb="32px">
+      <Title>
         CONGRATULATIONS TO THE WINNERS!
-      </Text>
+      </Title>
 
       <Table
         tableHeaders={arrTableLabels}
