@@ -14,12 +14,19 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     background-image: linear-gradient(to top right, var(--blue), var(--pink));
     background-size: cover;
     height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   button {
